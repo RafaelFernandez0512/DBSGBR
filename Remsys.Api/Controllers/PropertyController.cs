@@ -112,6 +112,60 @@ namespace Remsys.Api.Controllers
                 return ex.Message;
             }
         }
+        // UPDATE api
+        // POST api/<PropertyController>
+        [HttpPut("Property")]
+        public async Task<string> PutProperty([FromBody] PropertyDto propertyDto)
+        {
+            try
+            {
+                return await _propertyService.UpdateProperty(propertyDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+        [HttpPut("PropertyType")]
+        public async Task<string> PutPropertyType([FromBody] PropertyTypeDto propertyTypeDto)
+        {
+            try
+            {
+                return await _propertyService.UpdateTypeProperty(propertyTypeDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+        [HttpPut("ProperyOperationType")]
+        public async Task<string> PutProperyOperationType([FromBody] ProperyOperationTypeDto properyOperationTypeDto)
+        {
+            try
+            {
+                return await _propertyService.UpdateTypeOperation(properyOperationTypeDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+        [HttpPut("Room")]
+        public async Task<string> PutRoom([FromBody] RoomDto roomDto)
+        {
+            try
+            {
+                return await _propertyService.UpdateRoom(roomDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
 
         // DELETE api/<PropertyController>/5
         [HttpDelete("Property/{id}")]

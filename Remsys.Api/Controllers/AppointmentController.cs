@@ -65,9 +65,16 @@ namespace Remsys.Api.Controllers
             return await _appointmentService.SaveStateAppointment(appointmentDto);
         }
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+
+        [HttpPost]
+        public async Task<string> PutAppointment(AppointmentDto appointmentDto)
         {
+            return await _appointmentService.UpdateAppointment(appointmentDto);
+        }
+        [HttpPost("StateAppointment")]
+        public async Task<string> PutStateAppointment(StateAppointmentDto appointmentDto)
+        {
+            return await _appointmentService.UpdateStateAppointment(appointmentDto);
         }
 
 

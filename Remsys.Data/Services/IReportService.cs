@@ -10,6 +10,8 @@ namespace Remsys.Data.Services
     {
         Task<string> SaveTypeReport( ReportTypeDto reportTypeDto);
         Task<string> SaveReport(ReportDto reportDto);
+        Task<string> UpdateTypeReport(ReportTypeDto reportTypeDto);
+        Task<string> UpdateReport(ReportDto reportDto);
         Task<string> DeleteTypeReport(int id);
         Task<string> DeleteReport(int id);
         Task<List<ReportDto>> GetReports();

@@ -104,7 +104,22 @@ namespace Remsys.Data.Services
 
         public async Task<string> SaveProvince(ProvinceDto provinceDto)
         {
-            return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblProvincia, new object[] {  provinceDto.Name }));
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblProvincia, new object[] { provinceDto.IdCountry, provinceDto.Name }));
+        }
+
+        public async Task<string> UpdateAddress(AddressDto addressDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblDireccion, new object[] { addressDto.Id, addressDto.IdProvince }));
+        }
+
+        public async Task<string> UpdateCountry(CountryDto countryDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblPais, new object[] { countryDto.Id,countryDto.Name }));
+        }
+
+        public async Task<string> UpdateProvince(ProvinceDto provinceDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblProvincia, new object[] { provinceDto.IdProvince, provinceDto.IdCountry,provinceDto.Name }));
         }
     }
 }

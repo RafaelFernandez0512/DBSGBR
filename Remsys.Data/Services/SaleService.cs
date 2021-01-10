@@ -116,7 +116,7 @@ namespace Remsys.Data.Services
 
         public async Task<string> UpdateContract(ContractDto contractDto)
         {
-            return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblContrato, new object[] { contractDto.Id, contractDto.IdContractType, contractDto.Id, contractDto.Description, contractDto.File }));
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblContrato, new object[] { contractDto.Id, contractDto.IdContractType, contractDto.Id, contractDto.Description, contractDto.File }));
         }
 
 

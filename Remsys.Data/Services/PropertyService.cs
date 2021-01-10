@@ -167,5 +167,28 @@ namespace Remsys.Data.Services
         {
             return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblTipoOperacionInmueble, new object[] {  typeRoomDto.Name }));
         }
+
+        public async Task<string> UpdateProperty(PropertyDto propertyDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblInmueble, new object[] {propertyDto.Id, propertyDto.IdEstateAgent, propertyDto.IdPropertyType, propertyDto.IdProperyOperationType,
+                propertyDto.IdAttorney, propertyDto.IdAddress, propertyDto.PropertyValue, propertyDto.QuantityMeters, propertyDto.Description, propertyDto.Estado, propertyDto.Rate, propertyDto.Image }));
+        }
+
+        public async Task<string> UpdateRoom(RoomDto roomDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblHabitacion, new object[] { roomDto.Id,roomDto.IdTypeRoom, roomDto.Property, roomDto.Quantity }));
+        }
+
+        public async Task<string> UpdateTypeOperation(ProperyOperationTypeDto properyOperationTypeDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblTipoOperacionInmueble, new object[] { properyOperationTypeDto.Id, properyOperationTypeDto.Name }));
+        }
+
+        public async Task<string> UpdateTypeProperty(PropertyTypeDto propertyTypeDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblTipoPropiedad, new object[] { propertyTypeDto.Id, propertyTypeDto.Name }));
+        }
+
+
     }
 }

@@ -12,6 +12,8 @@ namespace Remsys.Data.Services
         Task<List<StateAppointmentDto>> GetStateAppointments();
         Task<string> SaveAppointment(AppointmentDto appointmentDto);
         Task<string> SaveStateAppointment(StateAppointmentDto stateAppointmentDto );
+        Task<string> UpdateAppointment(AppointmentDto appointmentDto);
+        Task<string> UpdateStateAppointment(StateAppointmentDto stateAppointmentDto);
         Task<string> DeleteStateAppointment(int id);
         Task<string> DeleteAppointment(int id );
     }

@@ -11,6 +11,8 @@ namespace Remsys.Data.Services
         Task<string> SaveSale(SaleDto saleDto);
         Task<string> SaveContract(ContractDto contractDto);
         Task<string> SaveTypeContract(ContractTypeDto contractTypeDto);
+        Task<string> UpdateContract(ContractDto contractDto);
+        Task<string> UpdateTypeContract(ContractTypeDto contractTypeDto);
 
         Task<string> DeleteSale(int id);
 

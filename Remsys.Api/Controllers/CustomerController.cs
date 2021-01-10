@@ -49,11 +49,11 @@ namespace Remsys.Api.Controllers
         }
 
         // PUT api/<CustomerController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public async Task<string> Put([FromBody] AttorneyDto attorneyDto)
         {
+            return await _personService.UpdatePerson(attorneyDto);
         }
-
         // DELETE api/<CustomerController>/5
         [HttpDelete("{id}")]
         public async Task Delete(int id)

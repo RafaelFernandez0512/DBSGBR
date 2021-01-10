@@ -82,7 +82,45 @@ namespace Remsys.Api.Controllers
         }
 
         // PUT api/<AddressController>/5
+        [HttpPut("Country")]
+        public async Task<string> PutCountry([FromBody] CountryDto countryDto)
+        {
+            try
+            {
+                return await _addressService.UpdateCountry(countryDto);
+            }
+            catch (Exception ex)
+            {
 
+                return ex.Message;
+            }
+        }
+        [HttpPut("Province")]
+        public async Task<string> PutProvince([FromBody] ProvinceDto provinceDto)
+        {
+            try
+            {
+                return await _addressService.UpdateProvince(provinceDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+        [HttpPut("Address")]
+        public async Task<string> PutAddress([FromBody] AddressDto addressDto)
+        {
+            try
+            {
+                return await _addressService.UpdateAddress(addressDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
         // DELETE api/<AddressController>/5
         [HttpDelete("Province{id}")]
         public async Task<string> DeleteProvince(int id)

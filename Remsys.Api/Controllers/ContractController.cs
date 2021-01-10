@@ -66,10 +66,33 @@ namespace Remsys.Api.Controllers
             }
         }
         // PUT api/<ContractController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost]
+        public async Task<string> Put([FromBody] ContractDto contractDto)
         {
+            try
+            {
+                return await _saleService.UpdateContract(contractDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
         }
+        [HttpPost("ContractsType")]
+        public async Task<string> PutTypeContract([FromBody] ContractTypeDto ContractTypeDto)
+        {
+            try
+            {
+                return await _saleService.UpdateTypeContract(ContractTypeDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+
 
         // DELETE api/<ContractController>/5
         [HttpDelete("{id}")]

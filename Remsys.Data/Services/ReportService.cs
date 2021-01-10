@@ -35,10 +35,11 @@ namespace Remsys.Data.Services
                     Description = item.Field<string>(2),
                     IdSale = item.Field<int>(3),
                     CreateDate = item.Field<DateTime>(4),
-                    ReportType = new ReportTypeDto { 
-                    Id =  item.Field<int>(5),
-                    Name =  item.Field<string>(4),
-                    } ,
+                    ReportType = new ReportTypeDto
+                    {
+                        Id = item.Field<int>(5),
+                        Name = item.Field<string>(4),
+                    },
                     IdReportType = item.Field<int>(5),
                 });
             }
@@ -69,6 +70,16 @@ namespace Remsys.Data.Services
         public async Task<string> SaveTypeReport(ReportTypeDto reportTypeDto)
         {
             return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblTipoReporte, new object[] { reportTypeDto.Name }));
+        }
+
+        public async Task<string> UpdateReport(ReportDto reportDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblTReporte, new object[] { reportDto.IdReport, reportDto.IdReportType, reportDto.IdSale, reportDto.Title, reportDto.Description }));
+        }
+
+        public async Task<string> UpdateTypeReport(ReportTypeDto reportTypeDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblTipoReporte, new object[] { reportTypeDto.Id, reportTypeDto.Name }));
         }
     }
 }

@@ -148,16 +148,43 @@ namespace Remsys.Data.Services
             return saleManagerDtos;
         }
 
+        public async Task<PersonDto> LogInt(string name, string document)
+        {
+            var datas = await Task.FromResult(Getdata(StoreProcedureConstant.LoginProc,new object[] { name,document}));
+            PersonDto dtos = new PersonDto();
+            DataTable dt = datas.Tables["Table"];
+            foreach (DataRow item in dt.Rows)
+            {
+                dtos = new PersonDto
+                {
+                    IdPerson = item.Field<int>(0),
+                    IdDocumentType = item.Field<int>(1),
+                    DocumentType = new DocumentTypeDto
+                    {
+                        Id = item.Field<int>(1),
+                        Name = item.Field<string>(2),
+                    },
+                    Name = item.Field<string>(3),
+                    LastName = item.Field<string>(4),
+                    DateBorn = item.Field<DateTime>(5),
+                    Mail = item.Field<string>(6),
+                    DateCreate = item.Field<DateTime>(7),
+                    Phone = item.Field<string>(8),
+                };
+            }
+            return dtos;
+        }
+
         public async Task<string> SaveAttorney(AttorneyDto attorneyDto)
         {
-            object[] person = new object[] {attorneyDto.IdPerson, attorneyDto.IdDocumentType, attorneyDto.IdentityDocument, attorneyDto.Name, attorneyDto.LastName, attorneyDto.Mail, attorneyDto.Phone, attorneyDto.DateBorn };
+            object[] person = new object[] {attorneyDto.IdPerson,attorneyDto.IdentityDocument, attorneyDto.IdDocumentType, attorneyDto.Name, attorneyDto.LastName, attorneyDto.Mail, attorneyDto.Phone, attorneyDto.DateBorn };
             return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblAbogado, person));
              
         }
 
         public async Task<string> SaveCustomer(CustomerDto customerDto)
         {
-            object[] person = new object[] { customerDto.IdPerson, customerDto.IdDocumentType, customerDto.Name, customerDto.LastName, customerDto.Mail, customerDto.Phone, customerDto.DateBorn };
+            object[] person = new object[] { customerDto.IdPerson, customerDto.IdentityDocument, customerDto.IdDocumentType, customerDto.Name, customerDto.LastName, customerDto.Mail, customerDto.Phone, customerDto.DateBorn };
             return await  Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblCliente, person));
         }
 
@@ -172,6 +199,12 @@ namespace Remsys.Data.Services
         {
             object[] person = new object[] { saleManagerDto.IdPerson, saleManagerDto.IdDocumentType, saleManagerDto.IdentityDocument, saleManagerDto.Name, saleManagerDto.LastName, saleManagerDto.Mail, saleManagerDto.Phone, saleManagerDto.DateBorn };
             return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblEncargadoDeVenta, person));
+        }
+
+        public async Task<string> UpdatePerson(PersonDto personDto)
+        {
+            object[] person = new object[] { personDto.IdPerson, personDto.IdentityDocument, personDto.IdDocumentType, personDto.Name, personDto.LastName, personDto.Mail, personDto.Phone, personDto.DateBorn };
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateTblPersona, person));
         }
     }
 }

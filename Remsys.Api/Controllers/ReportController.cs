@@ -67,9 +67,31 @@ namespace Remsys.Api.Controllers
         }
 
         // PUT api/<ReportController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public async Task<string> Put([FromBody] ReportDto reportDto)
         {
+            try
+            {
+                return await _reportService.UpdateReport(reportDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+        [HttpPut("TypeReport")]
+        public async Task<string> PutTypeReport([FromBody] ReportTypeDto reportDto)
+        {
+            try
+            {
+                return await _reportService.UpdateTypeReport(reportDto);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
         }
 
         // DELETE api/<ReportController>/5

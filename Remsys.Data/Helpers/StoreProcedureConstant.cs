@@ -66,6 +66,25 @@ namespace Remsys.Data.Helpers
 
         #endregion
 
+        #region Update
+        public static string UpdateTblPersona => nameof(UpdateTblPersona);
+        public static string UpdateInTblContrato => nameof(UpdateInTblContrato);
+        public static string UpdateInTblTipoContrato => nameof(UpdateInTblTipoContrato);
+        public static string UpdateInTblEstadoCita => nameof(UpdateInTblEstadoCita);
+        public static string UpdateInTblCita => nameof(UpdateInTblCita);
+
+        public static string UpdateInTblTipoReporte => nameof(UpdateInTblTipoReporte);
+        public static string UpdateInTblTReporte => nameof(UpdateInTblTReporte);
+        public static string UpdateInTblPais => nameof(UpdateInTblPais);
+        public static string UpdateInTblDireccion => nameof(UpdateInTblDireccion);
+        public static string UpdateInTblTipoOperacionInmueble => nameof(UpdateInTblTipoOperacionInmueble);
+        public static string UpdateInTblTipoPropiedad => nameof(UpdateInTblTipoPropiedad);
+
+        public static string UpdateInTblHabitacion => nameof(UpdateInTblHabitacion);
+        public static string UpdateInTblInmueble => nameof(UpdateInTblInmueble);
+        public static string UpdateInTblProvincia => nameof(UpdateInTblProvincia);
+        #endregion
+
         #region Join
         public static string JoinClientePersona => nameof(JoinClientePersona);
 
@@ -93,6 +112,7 @@ namespace Remsys.Data.Helpers
         public static string MostrarTiposContratos => nameof(MostrarTiposContratos);
         public static string MostrarVentas => nameof(MostrarVentas);
         public static string MostrarTblPais => nameof(MostrarTblPais);
+        public static string LoginProc => nameof(LoginProc); 
         #endregion
 
 

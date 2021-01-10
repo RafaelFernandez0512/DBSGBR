@@ -13,7 +13,8 @@ namespace Remsys.Data.Services
         Task<List<SaleManagerDto>> GetSaleManagerService();
         Task<List<EstateAgentDto>> GetEstateAgentService();
         Task<List<AttorneyDto>> GetAttorneyService();
-
+        Task<string> UpdatePerson(PersonDto personDto );
+        Task<PersonDto> LogInt(string name, string document);
         Task<string> SaveCustomer(CustomerDto customerDto );
         Task<string> SaveSaleManager(SaleManagerDto saleManagerDto );
         Task<string> SaveEstateAgent(EstateAgentDto estateAgentDto );
