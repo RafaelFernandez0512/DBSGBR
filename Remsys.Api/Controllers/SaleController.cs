@@ -49,11 +49,6 @@ namespace Remsys.Api.Controllers
             return await _saleService.SaveSale(saleDto);
         }
 
-        // PUT api/<SaleController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
         // DELETE api/<SaleController>/5
         [HttpDelete("{id}")]

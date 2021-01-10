@@ -17,6 +17,13 @@ namespace Remsys.Data.Services
         Task<string> SaveRoom(RoomDto roomDto);
         Task<string> SaveProperty(PropertyDto propertyDto);
 
+        Task<string> UpdateTypeOperation(ProperyOperationTypeDto properyOperationTypeDto);
+
+        Task<string> UpdateTypeProperty(PropertyTypeDto propertyTypeDto);
+
+        Task<string> UpdateRoom(RoomDto roomDto);
+        Task<string> UpdateProperty(PropertyDto propertyDto);
+
 
         //Delete
 

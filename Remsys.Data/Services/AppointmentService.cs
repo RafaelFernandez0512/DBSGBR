@@ -83,5 +83,16 @@ namespace Remsys.Data.Services
         { 
             return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblEstadoCita, new object[] { stateAppointmentDto.Name }));
         }
+
+        public async Task<string> UpdateAppointment(AppointmentDto appointmentDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblCita, new object[] { appointmentDto.IdAppointment, appointmentDto.ScheduleDto.VisitTime, appointmentDto.ScheduleDto.EndVisitTime, appointmentDto.IdStateAppointment, appointmentDto.IdCustomer, appointmentDto.IdSaleManager, appointmentDto.IdProperty }));
+
+        }
+
+        public async Task<string> UpdateStateAppointment(StateAppointmentDto stateAppointmentDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblEstadoCita, new object[] { stateAppointmentDto.Id, stateAppointmentDto.Name }));
+        }
     }
 }

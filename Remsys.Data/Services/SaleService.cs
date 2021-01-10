@@ -114,6 +114,17 @@ namespace Remsys.Data.Services
             return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblTipoContrato, new object[] { contractTypeDto.Name }));
         }
 
+        public async Task<string> UpdateContract(ContractDto contractDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.InsertInTblContrato, new object[] { contractDto.Id, contractDto.IdContractType, contractDto.Id, contractDto.Description, contractDto.File }));
+        }
 
+
+
+
+        public async Task<string> UpdateTypeContract(ContractTypeDto contractTypeDto)
+        {
+            return await Task.FromResult(CommandGrud(StoreProcedureConstant.UpdateInTblTipoContrato, new object[] { contractTypeDto.Id, contractTypeDto.Name }));
+        }
     }
 }
