@@ -103,18 +103,19 @@ namespace Remsys.Data.Services
                     IdEstateAgent = item.Field<int>(0),
                     Image = item.Field<byte[]>(1),
                     IdPerson = item.Field<int>(2),
-                    IdDocumentType = item.Field<int>(3),
+                    IdentityDocument = item.Field<string>(3),
+                    IdDocumentType = item.Field<int>(4),
+                 
                     DocumentType = new DocumentTypeDto
                     {
-                        Id = item.Field<int>(3),
-                        Name = item.Field<string>(4),
+                        Id = item.Field<int>(4),
+                        Name = item.Field<string>(5),
                     },
-                    Name = item.Field<string>(5),
-                    LastName = item.Field<string>(6),
-                    DateBorn = item.Field<DateTime>(7),
-                    Mail = item.Field<string>(8),
-                    DateCreate = item.Field<DateTime>(9),
-                    Phone = item.Field<string>(10),
+                    Name = item.Field<string>(6),
+                    LastName = item.Field<string>(7),
+                    DateBorn = item.Field<DateTime>(8),
+                    Mail = item.Field<string>(9),
+                    DateCreate = item.Field<DateTime>(10)
                 });
             }
             return estateAgents;
