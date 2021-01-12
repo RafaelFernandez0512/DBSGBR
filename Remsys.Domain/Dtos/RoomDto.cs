@@ -19,5 +19,7 @@ namespace Remsys.Domain.Dtos
         public int IdPropery { get; set; }
         [JsonProperty("Property")]
         public PropertyDto Property { get; set; }
+        [JsonIgnore]
+        public string Icon { get; set; }
     }
 }

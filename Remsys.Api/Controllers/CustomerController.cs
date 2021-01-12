@@ -36,9 +36,16 @@ namespace Remsys.Api.Controllers
 
         // GET api/<CustomerController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<CustomerDto> GetById(int id)
         {
-            return "value";
+            var customers =await GetCustomer();
+            if (customers!=null)
+            {
+                var customer = customers.Where(e => e.IdPerson == id);
+              return customer.FirstOrDefault();
+             
+            }
+            return null; 
         }
 
         // POST api/<CustomerController>

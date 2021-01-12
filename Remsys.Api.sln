@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemsyApp.Android", "RemsyAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemsyApp.iOS", "RemsyApp\RemsyApp.iOS\RemsyApp.iOS.csproj", "{FD580EAB-F473-48D2-8173-3E061F7FCA03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemsyApp", "RemsyApp\RemsyApp\RemsyApp.csproj", "{7D420B92-533B-4AC7-A657-9CFDCBC1CC3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemsyApp", "RemsyApp\RemsyApp\RemsyApp.csproj", "{7D420B92-533B-4AC7-A657-9CFDCBC1CC3C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Remsys.Domain", "Remsys.Domain\Remsys.Domain.csproj", "{DD2ABA34-C04A-4283-BE60-6D7243494B62}"
 EndProject

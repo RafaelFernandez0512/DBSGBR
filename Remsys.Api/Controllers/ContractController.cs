@@ -66,7 +66,7 @@ namespace Remsys.Api.Controllers
             }
         }
         // PUT api/<ContractController>/5
-        [HttpPost]
+        [HttpPut]
         public async Task<string> Put([FromBody] ContractDto contractDto)
         {
             try
@@ -79,7 +79,7 @@ namespace Remsys.Api.Controllers
                 return ex.Message;
             }
         }
-        [HttpPost("ContractsType")]
+        [HttpPut("ContractsType")]
         public async Task<string> PutTypeContract([FromBody] ContractTypeDto ContractTypeDto)
         {
             try

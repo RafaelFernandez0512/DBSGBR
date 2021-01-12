@@ -10,6 +10,6 @@ namespace Remsys.Domain.Dtos
         [JsonProperty("IdEstateAgent")]
         public int IdEstateAgent { get; set; }
         [JsonProperty("Image")]
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
     }
 }

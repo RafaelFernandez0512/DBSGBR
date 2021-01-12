@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemsyApp.Views.LoginPage"
+             BackgroundImageSource="casaridao"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ContentPage.Content>
+        <Grid >
+            <BoxView BackgroundColor="#52557F"
+                         Opacity="0.6"
+                         />
+            <Grid Padding="10" RowSpacing="10" RowDefinitions="1*,Auto,Auto,0.3*,0.3*,0.2*,*"
+              
+              >
+
+                <Label Grid.Row="0"
+                   TextColor="White"
+                   Text="REMSY"
+                       VerticalOptions="EndAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   FontAttributes="Bold"
+                   FontSize="Header"/>
+                <Label Grid.Row="1"
+                   TextColor="#82C31B"
+                   Text="Estate Real"
+                   HorizontalOptions="CenterAndExpand"
+                   CharacterSpacing="5"
+                   FontAttributes="Bold"
+                   FontSize="20"/>
+                <Label Text="Usuario"
+                           FontAttributes="Bold"
+                   FontSize="20"
+             
+                   TextColor="White"
+                   Grid.Row="2"/>
+                <Entry Grid.Row="3"
+                   IsPassword="True"
+                       TextColor="White"
+                        PlaceholderColor="White"
+                  />
+                <Entry Grid.Row="4"
+                   IsPassword="True"
+                         TextColor="White"
+                       PlaceholderColor="White"
+                   Placeholder="Contraseña"/>
+                <yummy:PancakeView  Grid.Row="5"
+                                CornerRadius="25"
+                                    Margin="40,0,40,0"
+                                BackgroundColor="#82C31B">
+                    <Label Text="Sign In"
+                           HorizontalOptions="CenterAndExpand"
+                           FontAttributes="Bold"
+                           VerticalOptions="CenterAndExpand"
+                           TextColor="White"
+                           FontSize="20"/>
+                </yummy:PancakeView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

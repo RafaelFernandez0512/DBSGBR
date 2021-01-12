@@ -23,6 +23,8 @@ namespace Remsys.Domain.Dtos
         public int IdAttorney { get; set; }
         [JsonProperty("IdAddress")]
         public int IdAddress { get; set; }
+        [JsonProperty("Address")]
+        public AddressDto Address { get; set; }
         [JsonProperty("PropertyValue")]
         public decimal PropertyValue { get; set; }
         [JsonProperty("IdRoom")]
@@ -34,8 +36,12 @@ namespace Remsys.Domain.Dtos
         [JsonProperty("Rate")]
         public int Rate { get; set; }
         [JsonProperty("Image")]
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
         [JsonProperty("QuantityMeters")]
-        public int QuantityMeters { get; set; }
+        public decimal QuantityMeters { get; set; }
+        [JsonProperty("EstateAgent")]
+        public EstateAgentDto EstateAgent  { get; set; }
+        [JsonProperty("Room")]
+        public List<RoomDto> Rooms { get; set; }
     }
 }

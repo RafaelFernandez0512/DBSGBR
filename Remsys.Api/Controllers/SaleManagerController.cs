@@ -37,9 +37,16 @@ namespace Remsys.Api.Controllers
 
         // GET api/<SaleManagerController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<SaleManagerDto> GetById(int id)
         {
-            return "value";
+            var persons = await Get();
+            if (persons != null)
+            {
+                var person = persons.Where(e => e.IdPerson == id);
+                return persons.FirstOrDefault();
+
+            }
+            return null;
         }
 
         // POST api/<SaleManagerController>

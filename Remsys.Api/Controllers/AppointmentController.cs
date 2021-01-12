@@ -33,7 +33,7 @@ namespace Remsys.Api.Controllers
             }
            
         }
-        [HttpGet("StateAppointment")]
+        [HttpGet("/StateAppointment")]
         public async Task<IEnumerable<StateAppointmentDto>> GetStateAppointment()
         {
             try
@@ -49,9 +49,10 @@ namespace Remsys.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<List<AppointmentDto>> GetById(int id)
         {
-            return "value";
+            var appointment = await GetAppointment();
+            return await  Task.FromResult(appointment.Where(e => e.IdCustomer == id || e.IdProperty == id || e.IdSaleManager == id).ToList());
         }
 
         [HttpPost]
@@ -59,19 +60,19 @@ namespace Remsys.Api.Controllers
         {
           return  await _appointmentService.SaveAppointment(appointmentDto);
         }
-        [HttpPost("StateAppointment")]
+        [HttpPost("/StateAppointment")]
         public async Task<string> PostStateAppointment(StateAppointmentDto appointmentDto )
         {
             return await _appointmentService.SaveStateAppointment(appointmentDto);
         }
 
 
-        [HttpPost]
+        [HttpPut]
         public async Task<string> PutAppointment(AppointmentDto appointmentDto)
         {
             return await _appointmentService.UpdateAppointment(appointmentDto);
         }
-        [HttpPost("StateAppointment")]
+        [HttpPut("/StateAppointment")]
         public async Task<string> PutStateAppointment(StateAppointmentDto appointmentDto)
         {
             return await _appointmentService.UpdateStateAppointment(appointmentDto);
@@ -83,7 +84,7 @@ namespace Remsys.Api.Controllers
         {
             return await _appointmentService.DeleteAppointment(id);
         }
-        [HttpDelete("StateAppointment/{id}")]
+        [HttpDelete("/StateAppointment/{id}")]
         public async Task<string> DeleteStateAppointment(int id)
         {
             return await _appointmentService.DeleteStateAppointment(id);

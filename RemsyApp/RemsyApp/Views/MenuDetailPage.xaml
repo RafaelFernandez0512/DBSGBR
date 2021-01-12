@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RemsyApp.Views.MenuDetailPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu"
+                    
+                     BackgroundColor="#82C31B"
+                     >
+            <CollectionView ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectItem}"
+                            SelectionMode="Single" >
+                <CollectionView.Header>
+                    <Grid RowDefinitions="*,*" BackgroundColor="White" ColumnDefinitions="Auto,*" Padding="10">
+                        <Image Grid.RowSpan="2"/>
+                        <Label Grid.Column="1"
+                               Grid.Row="0"
+                               HorizontalOptions="CenterAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="REMSYS" 
+                                          FontSize="40"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Grid.Column="1"
+                               Grid.Row="1">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding Name}"/>
+                                    <Span Text="{Binding LastName,StringFormat=' {0}'}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="Auto,*"  Padding="10,0,0,0" ColumnSpacing="20" Margin="10">
+                            <Label Text="{Binding Image}" FontSize="Title"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontFamily="FontAwesomeSolid"
+                                   TextColor="White"/>
+
+                            <Label Text="{Binding Title}" TextColor="White" VerticalOptions="CenterAndExpand" FontSize="Title" Grid.Column="1"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

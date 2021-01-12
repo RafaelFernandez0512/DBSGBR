@@ -43,7 +43,7 @@ namespace Remsys.Data.Services
             DataTable dt = datas.Tables["Table"];
             foreach (DataRow item in dt.Rows)
             {
-                dtos.Add(new PropertyDto
+                var property = new PropertyDto
                 {
                     Id = item.Field<int>(0),
                     IdEstateAgent = item.Field<int>(1),
@@ -58,14 +58,27 @@ namespace Remsys.Data.Services
                     Name = item.Field<string>(5),
                     },
                     IdAttorney = item.Field<int>(6),
-                    IdRoom = item.Field<int>(7),
-                    PropertyValue = item.Field<decimal>(8),
-                     Description =  item.Field<string>(9),
-                     Rate = item.Field<int>(10),
-                     Image = item.Field<string>(11),
+                    IdAddress= item.Field<int>(7),
+                    IdRoom = item.Field<int>(8),
+                    PropertyValue = item.Field<decimal>(9),
+                    QuantityMeters = item.Field<decimal>(10),
+                    Description =  item.Field<string>(11),
+                    Estado = item.Field<bool>(12),
+                    Rate = item.Field<int>(13),
+                     Image = item.Field<byte[]>(14),
+                     
+                    EstateAgent = new EstateAgentDto() {
+                        Image = item.Field<byte[]>(15),
+                        Name = item.Field<string>(16),
+                    LastName = item.Field<string>(17)
+              
+                    }
 
-                });
+                };
+                property.Rooms = await GetRoom(property.Id);
+                dtos.Add(property);
             }
+
             return dtos;
         }
 

@@ -34,11 +34,17 @@ namespace Remsys.Api.Controllers
             }
         }
 
-        // GET api/<EstateAgentController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<EstateAgentDto> GetById(int id)
         {
-            return "value";
+            var persons = await Get();
+            if (persons != null)
+            {
+                var person = persons.Where(e => e.IdPerson == id);
+                return persons.FirstOrDefault();
+
+            }
+            return null;
         }
 
         // POST api/<EstateAgentController>

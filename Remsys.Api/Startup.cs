@@ -16,7 +16,6 @@ namespace Remsys.Api
 {
     public class Startup
     {
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -26,19 +25,22 @@ namespace Remsys.Api
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
+
         {
+            services.AddScoped<IAppointmentService, AppointmentService>();
+            services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<IAddressService, AddressService>();
+            services.AddScoped<IReportService, ReportService>();
+            services.AddScoped<ISaleService, SaleService>();
+            services.AddScoped<IAddressService, AddressService>();
+            services.AddScoped<IPropertyService,PropertyService>();
+             
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "SGBR API", Version = "v1" });
             });
-            services.AddSingleton<IAppointmentService, AppointmentService>();
-            services.AddSingleton<IPersonService, PersonService>();
-            services.AddSingleton<IAddressService, AddressService>();
-            services.AddSingleton<IReportService, ReportService>();
-            services.AddSingleton<ISaleService, SaleService>();
-            services.AddSingleton<IAddressService, AddressService>();
-            services.AddSingleton<IPropertyService, PropertyService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

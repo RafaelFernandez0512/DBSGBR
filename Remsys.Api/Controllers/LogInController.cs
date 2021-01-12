@@ -20,7 +20,7 @@ namespace Remsys.Api.Controllers
             _personService = personService;
         }
         // GET: api/<LogInController>
-        [HttpGet("{name}/{idDocumento}")]
+        [HttpPost("{name}/{idDocumento}")]
         public Task<PersonDto> Get(string name,string idDocumento)
         {
             return _personService.LogInt(name, idDocumento);

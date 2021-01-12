@@ -25,6 +25,12 @@ namespace Remsys.Api.Controllers
         {
             return await _propertyService.GetProperty();
         }
+        [HttpGet("Property/{Id}")]
+        public async Task<IEnumerable<PropertyDto>> GetProperty(string Id)
+        {
+            var properties = await _propertyService.GetProperty();
+            return await Task.FromResult(properties.Where(e => e.IdEstateAgent == int.Parse(Id)));
+        }
         [HttpGet("PropertyType")]
         public async Task<IEnumerable<PropertyTypeDto>> GetTypeProperty()
         {
