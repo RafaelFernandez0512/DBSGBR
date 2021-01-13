@@ -30,6 +30,7 @@ namespace RemsyApp.ViewModels
         public DelegateCommand<string>GoToNavigation { get=>new DelegateCommand<string>(async(param)=>await NavigationService.NavigateAsync(new Uri(param,UriKind.Relative))); }
         public MenuDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
+
         }
 
         public void Initialize(INavigationParameters parameters)

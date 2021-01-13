@@ -14,6 +14,7 @@ namespace RemsyApp.Helpers
         public const string MenuDetailPage = nameof(MenuDetailPage);
         public const string ProfilePage = nameof(ProfilePage);
         public const string OficePage = nameof(OficePage);
-        public const string HousesPage = nameof(HousesPage); 
+        public const string HousesPage = nameof(HousesPage);
+        public const string DetailPropertyPage = nameof(DetailPropertyPage);
     }
 }

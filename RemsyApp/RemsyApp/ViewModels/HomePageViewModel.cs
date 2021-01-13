@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using Prism.Commands;
+using Prism.Navigation;
 using RemsyApp.Services;
 using Remsys.Domain.Dtos;
 using System;
@@ -16,11 +17,14 @@ namespace RemsyApp.ViewModels
         IPersonService _personService;
         public ObservableCollection<PropertyDto> Propertys { get; set; }
         public ObservableCollection<EstateAgentDto> Agents { get; set; }
+
+     
         public HomePageViewModel(INavigationService navigationService, IPropertyService propertyService,IPersonService personService) : base(navigationService)
         {
             _propertyService = propertyService;
             _personService = personService;
            
+            
             Task.Run(async () => await GetDepartaments());
         }
         async Task GetDepartaments()
