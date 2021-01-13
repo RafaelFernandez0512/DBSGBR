@@ -26,23 +26,27 @@ namespace RemsyApp.ViewModels
                 selectproperty = value;
                 if (selectproperty != null)
                 {
+                    
                     GoToDetailCommand.Execute();
                     selectproperty = null;
                 }
             }
         }
+      
         public DelegateCommand GoToDetailCommand
         {
             get => new DelegateCommand(() => {
 
-                NavigationService.NavigateAsync(new Uri($"/{NavigationUri.DetailPropertyPage}", UriKind.Relative), new NavigationParameters() { { nameof(PropertyTypeDto), Selectproperty } });
+                NavigationService.NavigateAsync(new Uri($"/{NavigationUri.DetailPropertyPage}", UriKind.Relative), new NavigationParameters() { { nameof(PropertyDto), Selectproperty } });
             });
         }
-
+      
         public HousesPageViewModel(INavigationService navigationService, IPropertyService propertyService) : base(navigationService)
         {
             _propertyService = propertyService;
             Task.Run(async () => await GetHouses());
+
+
         }
         async Task GetHouses()
         {
@@ -55,5 +59,6 @@ namespace RemsyApp.ViewModels
             }
             IsBusy = false;
         }
+
     }
 }

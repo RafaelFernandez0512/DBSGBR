@@ -12,6 +12,7 @@ namespace RemsyApp.ViewModels
         public bool IsBusy { get; set; }
         public BaseViewModel(INavigationService navigationService)
         {
+           
             NavigationService = navigationService;
         }
 

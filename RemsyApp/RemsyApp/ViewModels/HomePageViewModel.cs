@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
+using RemsyApp.Helpers;
 using RemsyApp.Services;
 using Remsys.Domain.Dtos;
 using System;
@@ -18,7 +19,30 @@ namespace RemsyApp.ViewModels
         public ObservableCollection<PropertyDto> Propertys { get; set; }
         public ObservableCollection<EstateAgentDto> Agents { get; set; }
 
-     
+        private PropertyDto selectproperty;
+
+        public PropertyDto Selectproperty
+        {
+            get { return selectproperty; }
+            set
+            {
+                selectproperty = value;
+                if (selectproperty != null)
+                {
+
+                    GoToDetailCommand.Execute();
+                    selectproperty = null;
+                }
+            }
+        }
+
+        public DelegateCommand GoToDetailCommand
+        {
+            get => new DelegateCommand(() => {
+
+                NavigationService.NavigateAsync(new Uri($"/{NavigationUri.DetailPropertyPage}", UriKind.Relative), new NavigationParameters() { { nameof(PropertyDto), Selectproperty } });
+            });
+        }
         public HomePageViewModel(INavigationService navigationService, IPropertyService propertyService,IPersonService personService) : base(navigationService)
         {
             _propertyService = propertyService;

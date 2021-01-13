@@ -22,7 +22,7 @@
                    FontSize="Header"/>
                 <Label Grid.Row="1"
                    TextColor="LavenderBlush"
-                   Text="Estate Real"
+                   Text="Real Estate"
                    HorizontalOptions="CenterAndExpand"
                    CharacterSpacing="5"
                    FontAttributes="Bold"

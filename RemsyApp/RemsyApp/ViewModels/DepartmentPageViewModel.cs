@@ -33,7 +33,7 @@ namespace RemsyApp.ViewModels
         }
         public DelegateCommand GoToDetailCommand { get => new DelegateCommand(()=> {
 
-            NavigationService.NavigateAsync(new Uri($"/{NavigationUri.DetailPropertyPage}",UriKind.Relative), new NavigationParameters() { { nameof(PropertyTypeDto), Selectproperty } });
+            NavigationService.NavigateAsync(new Uri($"/{NavigationUri.DetailPropertyPage}",UriKind.Relative), new NavigationParameters() { { nameof(PropertyDto), Selectproperty } });
         }); }
 
         public DepartmentPageViewModel(INavigationService navigationService, IPropertyService propertyService) :base(navigationService)

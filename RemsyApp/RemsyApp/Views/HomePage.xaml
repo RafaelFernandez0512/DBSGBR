@@ -20,16 +20,18 @@
             </Yummy:PancakeView>
 
             <!-- 2. Title-->
-            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontAttributes="Bold">
                 
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Popular properties" FontSize="30"/>
+                        <Span Text="Popular " FontSize="30"/>
+                        
+                        <Span Text="Properties" FontSize="30"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
             <StackLayout Grid.Row="2" Grid.ColumnSpan="4">
-                <CollectionView ItemsSource="{Binding Propertys}">
+                <CollectionView ItemsSource="{Binding Propertys}" SelectionMode="Single" SelectedItem="{Binding Selectproperty}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <views:PopView/>

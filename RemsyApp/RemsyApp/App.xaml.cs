@@ -18,7 +18,7 @@ namespace RemsyApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-           NavigationService.NavigateAsync($"/{NavigationUri.LoginPage}");
+           NavigationService.NavigateAsync($"{NavigationUri.MenuDetailPage}/{NavigationUri.HomePage}");
            
 
         }
