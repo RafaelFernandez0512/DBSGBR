@@ -18,7 +18,8 @@ namespace RemsyApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync($"{NavigationUri.MenuDetailPage}/{NavigationUri.HomePage}");
+           // NavigationService.NavigateAsync($"/{NavigationUri.LoginPage}");
+           NavigationService.NavigateAsync($"{NavigationUri.MenuDetailPage}/{NavigationUri.HomePage}");
 
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -31,7 +32,8 @@ namespace RemsyApp
             containerRegistry.RegisterForNavigation<MenuDetailPage, MenuDetailPageViewModel>(NavigationUri.MenuDetailPage);
             containerRegistry.RegisterForNavigation<OficePage, OficePageViewModel>(NavigationUri.OficePage);
             containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>(NavigationUri.ProfilePage);
-            containerRegistry.RegisterForNavigation<HousesPage, HousesPageViewModel>(NavigationUri.HousesPage); 
+            containerRegistry.RegisterForNavigation<HousesPage, HousesPageViewModel>(NavigationUri.HousesPage);
+            containerRegistry.RegisterForNavigation<DetailPropertyPage, DetailPropertyPageViewModel>(NavigationUri.DetailPropertyPage);
             containerRegistry.RegisterInstance<IPropertyService>(new PropertyService(new ApiClient<IPropertyServiceApi>(ApiKey.ApiUrl)));
             containerRegistry.RegisterInstance<IPersonService>(new PersonService(new ApiClient<IPersonServiceApi>(ApiKey.ApiUrl)));
             containerRegistry.RegisterInstance<IReportService>(new ReportService(new ApiClient<IReportServiceApi>(ApiKey.ApiUrl)));

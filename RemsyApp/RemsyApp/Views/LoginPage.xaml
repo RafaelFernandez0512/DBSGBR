@@ -14,44 +14,44 @@
               >
 
                 <Label Grid.Row="0"
-                   TextColor="White"
+                   TextColor="LavenderBlush"
                    Text="REMSY"
                        VerticalOptions="EndAndExpand"
                    HorizontalOptions="CenterAndExpand"
                    FontAttributes="Bold"
                    FontSize="Header"/>
                 <Label Grid.Row="1"
-                   TextColor="#82C31B"
+                   TextColor="LavenderBlush"
                    Text="Estate Real"
                    HorizontalOptions="CenterAndExpand"
                    CharacterSpacing="5"
                    FontAttributes="Bold"
                    FontSize="20"/>
-                <Label Text="Usuario"
-                           FontAttributes="Bold"
-                   FontSize="20"
-             
-                   TextColor="White"
-                   Grid.Row="2"/>
+                
                 <Entry Grid.Row="3"
-                   IsPassword="True"
-                       TextColor="White"
-                        PlaceholderColor="White"
-                  />
+                         TextColor="White"
+                       PlaceholderColor="White"
+                       FontAttributes="Italic"
+                   Placeholder="Usuario"/>
+
+              
+             
                 <Entry Grid.Row="4"
                    IsPassword="True"
                          TextColor="White"
                        PlaceholderColor="White"
                    Placeholder="Contraseña"/>
+                
                 <yummy:PancakeView  Grid.Row="5"
+                                    Padding="10"
                                 CornerRadius="25"
                                     Margin="40,0,40,0"
-                                BackgroundColor="#82C31B">
+                                BackgroundColor="Lavender">
                     <Label Text="Sign In"
                            HorizontalOptions="CenterAndExpand"
                            FontAttributes="Bold"
                            VerticalOptions="CenterAndExpand"
-                           TextColor="White"
+                           TextColor="Black"
                            FontSize="20"/>
                 </yummy:PancakeView>
             </Grid>
