@@ -46,17 +46,18 @@ namespace Remsys.Data.Services
                 {
                     IdAttorney = item.Field<int>(0),
                     IdPerson = item.Field<int>(1),
-                    IdDocumentType = item.Field<int>(2),
+                    IdentityDocument= item.Field<string>(2),
+                    IdDocumentType = item.Field<int>(3),
                     DocumentType = new DocumentTypeDto { 
-                    Id= item.Field<int>(2),
-                    Name= item.Field<string>(3),
+                    Id= item.Field<int>(3),
+                    Name= item.Field<string>(4),
                     },
-                    Name = item.Field<string>(4),
-                    LastName = item.Field<string>(5),
-                    DateBorn = item.Field<DateTime>(6),
-                    Mail = item.Field<string>(7),
-                    DateCreate = item.Field<DateTime>(8),
-                    Phone = item.Field<string>(9),
+                    Name = item.Field<string>(5),
+                    LastName = item.Field<string>(6),
+                    DateBorn = item.Field<DateTime>(7),
+                    Mail = item.Field<string>(8),
+                    DateCreate = item.Field<DateTime>(9),
+                    Phone = item.Field<string>(10),
                 });
             }
             return dtos;
@@ -73,18 +74,19 @@ namespace Remsys.Data.Services
                 {
                     IdCustomer = item.Field<int>(0),
                     IdPerson = item.Field<int>(1),
-                    IdDocumentType = item.Field<int>(2),
+                    IdentityDocument = item.Field<string>(2),
+                    IdDocumentType = item.Field<int>(3),
                     DocumentType = new DocumentTypeDto
                     {
-                        Id = item.Field<int>(2),
-                        Name = item.Field<string>(3),
+                        Id = item.Field<int>(3),
+                        Name = item.Field<string>(4),
                     },
-                    Name = item.Field<string>(4),
-                    LastName = item.Field<string>(5),
-                    DateBorn = item.Field<DateTime>(6),
-                    Mail = item.Field<string>(7),
-                    DateCreate = item.Field<DateTime>(8),
-                    Phone = item.Field<string>(9),
+                    Name = item.Field<string>(5),
+                    LastName = item.Field<string>(6),
+                    DateBorn = item.Field<DateTime>(7),
+                    Mail = item.Field<string>(8),
+                    DateCreate = item.Field<DateTime>(9),
+                    Phone = item.Field<string>(10),
 
                 });
             }
@@ -132,18 +134,19 @@ namespace Remsys.Data.Services
                 {
                     IdSaleManager = item.Field<int>(0),
                     IdPerson = item.Field<int>(1),
-                    IdDocumentType = item.Field<int>(2),
+                    IdentityDocument = item.Field<string>(2),
+                    IdDocumentType = item.Field<int>(3),
                     DocumentType = new DocumentTypeDto
                     {
-                        Id = item.Field<int>(2),
-                        Name = item.Field<string>(3),
+                        Id = item.Field<int>(3),
+                        Name = item.Field<string>(4),
                     },
-                    Name = item.Field<string>(4),
-                    LastName = item.Field<string>(5),
-                    DateBorn = item.Field<DateTime>(6),
-                    Mail = item.Field<string>(7),
-                    DateCreate = item.Field<DateTime>(8),
-                    Phone = item.Field<string>(9),
+                    Name = item.Field<string>(5),
+                    LastName = item.Field<string>(6),
+                    DateBorn = item.Field<DateTime>(7),
+                    Mail = item.Field<string>(8),
+                    DateCreate = item.Field<DateTime>(9),
+                    Phone = item.Field<string>(10),
                 });
             }
             return saleManagerDtos;
