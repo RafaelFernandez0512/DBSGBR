@@ -33,7 +33,7 @@ namespace RemsyApp.ViewModels
             if (propertys.SuccessResult)
             {
                 if (propertys.Result != null)
-                    Propertys = new ObservableCollection<PropertyDto>(propertys.Result.Where(e => e.IdPropertyType == 2));
+                    Propertys = new ObservableCollection<PropertyDto>(propertys.Result.Where(e => e.Rate >= 4));
             }
         }
         async Task GetPerson()

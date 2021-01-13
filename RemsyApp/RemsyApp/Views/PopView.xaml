@@ -8,9 +8,11 @@
     </ContentView.Resources>
     <ContentView.Content>
       <Grid RowDefinitions="*,60,Auto" Padding="10" ColumnDefinitions="2*,2*,1*" >
-            <Image Grid.ColumnSpan="3" Source="{Binding Image,Converter={StaticResource BaseString64ToImageConverters}}"
+            <yummy:PancakeView Grid.ColumnSpan="3" CornerRadius="20,20,20,20">
+                <Image  Source="{Binding Image,Converter={StaticResource BaseString64ToImageConverters}}"
                  Aspect="AspectFill"
                  />
+            </yummy:PancakeView>
             <yummy:PancakeView Grid.ColumnSpan="3"
                                VerticalOptions="EndAndExpand"
                               

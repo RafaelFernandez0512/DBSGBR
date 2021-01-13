@@ -15,8 +15,18 @@ namespace RemsyApp.Helpers
             if (value != null)
             {
                 var image = $"{value}";
-                var stream = new MemoryStream(System.Convert.FromBase64String(image));
-                retSource = ImageSource.FromStream(() => stream);
+                try
+                {
+                    var stream = new MemoryStream(System.Convert.FromBase64String(image));
+                    retSource = ImageSource.FromStream(() => stream);
+                }
+                catch (Exception)
+                {
+
+                    return retSource;
+                }
+              
+           
             }
             return retSource;
         }

@@ -29,6 +29,7 @@
                    FontSize="20"/>
                 
                 <Entry Grid.Row="3"
+                       Text="{Binding PersonDto.Name}"
                          TextColor="White"
                        PlaceholderColor="White"
                        FontAttributes="Italic"
@@ -38,6 +39,7 @@
              
                 <Entry Grid.Row="4"
                    IsPassword="True"
+                           Text="{Binding PersonDto.IdentityDocument}"
                          TextColor="White"
                        PlaceholderColor="White"
                    Placeholder="Contraseña"/>

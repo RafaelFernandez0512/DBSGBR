@@ -7,17 +7,17 @@
             <ScrollView VerticalScrollBarVisibility="Never">
                 <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,*" ColumnDefinitions="*,*" Margin="0,-45,0,0">
                     <!--1. Main picture-->
-                    <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="F7.jpg" VerticalOptions="StartAndExpand" Aspect="AspectFill" HeightRequest="350"/>
+                    <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="{Binding Property.Image}" VerticalOptions="StartAndExpand" Aspect="AspectFill" HeightRequest="350"/>
                     <Image Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" Source="Lines"  Margin="20,60,30,0" HeightRequest="45" WidthRequest="45" HorizontalOptions="Start" VerticalOptions="Start"/>
 
 
                     <!--2. Main information-->
-                    <Label Grid.Row="1" Grid.Column="0" Text="$200,000" FontAttributes="Bold" FontSize="30" Padding="20,10,20,5" VerticalOptions="Start"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding Property.PropertyValue,StringFormat='{0:C2}'}"  FontAttributes="Bold" FontSize="30" Padding="20,10,20,5" VerticalOptions="Start"/>
                     <Label Grid.Row="2" Grid.Column="0" Text="Bella vista, DN " TextColor="Silver" FontAttributes="Bold" FontSize="15" Padding="20,0" VerticalOptions="Start"/>
-                    <Button Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Text="20 hours ago" BorderColor="Silver" TextColor="Black" BorderWidth="1" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="15" WidthRequest="130" HeightRequest="50" CornerRadius="25" VerticalOptions="Center" Margin="0,0,30,0" HorizontalOptions="End"/>
+                    <Button Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Text="{Binding Property.QuantityMeters,StringFormat='{0}/Meters'}" BorderColor="Silver" TextColor="Black" BorderWidth="1" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="15" WidthRequest="130" HeightRequest="50" CornerRadius="25" VerticalOptions="Center" Margin="0,0,30,0" HorizontalOptions="End"/>
 
                     <!--3. House information-->
-                    <Label Grid.Row="3" Grid.Column="0" Text="House information" FontAttributes="Bold" FontSize="17" Padding="20,40,0,0" VerticalOptions="Start"/>
+                    <Label Grid.Row="3" Grid.Column="0" Text="{Binding Property.ProperyOperationTypeDto.Name}" FontAttributes="Bold" FontSize="17" Padding="20,40,0,0" VerticalOptions="Start"/>
                     
                     <StackLayout Grid.Row="4" Grid.ColumnSpan="2">
                         <Grid Padding="15,0" RowDefinitions="*,Auto" ColumnDefinitions="Auto">

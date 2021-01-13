@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RemsyApp.Views.AgentsPage">
     <ContentPage.Content>
-        <CollectionView>
+        <CollectionView ItemsSource="{Binding EstateAgents}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid RowDefinitions="*,Auto,Auto" ColumnDefinitions="*,*,*">
@@ -12,8 +12,8 @@
                         <Label Grid.Row="0"  Grid.Column="1">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span />
-                                    <Span />
+                                    <Span Text="{Binding Name}"/>
+                                    <Span Text="{Binding LastName,StringFormat='{0}'}"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
@@ -22,16 +22,16 @@
                         <Label Grid.Row="2"  Grid.Column="0">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span />
-                                    <Span />
+                                    <Span Text="" FontFamily="FontAwesomeSolid"/>
+                                    <Span Text="{Binding Mail}"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
                         <Label Grid.Row="2"  Grid.Column="1">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span />
-                                    <Span />
+                                    <Span Text="" FontFamily="FontAwesomeSolid"/>
+                                    <Span Text="{Binding Phone}"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>

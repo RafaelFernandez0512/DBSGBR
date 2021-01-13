@@ -1,4 +1,5 @@
 ﻿using Prism.Navigation;
+using RemsyApp.Models;
 using RemsyApp.Services;
 using Remsys.Domain.Dtos;
 using System;
@@ -19,6 +20,7 @@ namespace RemsyApp.ViewModels
         {
             _personService = personService;
             _propertyService = propertyService;
+            Task.Run(() => LoadData(Settings.IdPerson));
         }
        async Task LoadData(int id)
         {

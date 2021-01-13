@@ -1,19 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:views="clr-namespace:RemsyApp.Views"
              x:Class="RemsyApp.Views.HomePage">
     <ContentPage.Content>
-        <Grid Padding="25,0,0,0" ColumnDefinitions="Auto,*,*,Auto" RowDefinitions="Auto,Auto,*">
+        <Grid Padding="5,0,0,0" ColumnDefinitions="Auto,*,*,Auto" RowDefinitions="Auto,Auto,*">
 
             <!--Points-->
-
-            <Image Grid.Row="0" Grid.Column="0" Source="Lines" HeightRequest="25" >
+            <Image Grid.Row="0" Grid.Column="0" Source="Lines" HeightRequest="30" Margin="10" HorizontalOptions="StartAndExpand">
                 <Image.GestureRecognizers >
                     <TapGestureRecognizer Command="{Binding GoToMaster}" NumberOfTapsRequired="1">
                     </TapGestureRecognizer>
                 </Image.GestureRecognizers>
             </Image>
-         
             
             <Yummy:PancakeView Grid.Row="0" Grid.Column="3" 
                     WidthRequest="140" CornerRadius="0,0,20,0"
@@ -26,42 +24,18 @@
                 
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="DREAM      " FontSize="30"/>
-                        <Span Text="" FontSize="20"/>
-                        <Span Text="PROPERTYS" FontAttributes="Bold" FontSize="40"/>
+                        <Span Text="Popular properties" FontSize="30"/>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
             <StackLayout Grid.Row="2" Grid.ColumnSpan="4">
-                <Grid ColumnDefinitions="*,*" RowDefinitions="*,Auto,Auto" Padding="8" HeightRequest="300">
-                    <Yummy:PancakeView CornerRadius="20,20,20,20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                        <Image Source="F7" Aspect="AspectFill"/>
-                    </Yummy:PancakeView>
-                    <Image Grid.Row="0" Grid.Column="1" Margin="0,7,5,0" Source="heart" VerticalOptions="Start" HorizontalOptions="End" HeightRequest="40" WidthRequest="40"  BackgroundColor="Transparent"/>
-                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Bella Vista, DN" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,5,0,2"/>
-                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="House 47AK dream" FontAttributes="Bold" FontSize="22"/>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                </Grid>
-                <Grid ColumnDefinitions="*,*" RowDefinitions="*,Auto,Auto" Padding="8" HeightRequest="300">
-                    <Yummy:PancakeView CornerRadius="20,20,20,20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                        <Image Source="F7" Aspect="AspectFill"/>
-                    </Yummy:PancakeView>
-                    <Image Grid.Row="0" Grid.Column="1" Margin="0,7,5,0" Source="heart" VerticalOptions="Start" HorizontalOptions="End" HeightRequest="40" WidthRequest="40"  BackgroundColor="Transparent"/>
-                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Bella Vista, DN" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,5,0,2"/>
-                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="House 47AK dream" FontAttributes="Bold" FontSize="22"/>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                </Grid>
-
+                <CollectionView ItemsSource="{Binding Propertys}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <views:PopView/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </StackLayout>
 
             <!--

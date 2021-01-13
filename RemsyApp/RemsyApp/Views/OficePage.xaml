@@ -4,7 +4,13 @@
              x:Class="RemsyApp.Views.OficePage">
     <ContentPage.Content>
         <Grid RowDefinitions="Auto,*" ColumnDefinitions="*,Auto,*" Padding="0,10,5,0">
-            <Label Text="Departaments"
+            <Image Grid.Row="0" Grid.Column="0" Source="Lines" HeightRequest="30" Margin="10" HorizontalOptions="StartAndExpand">
+                <Image.GestureRecognizers >
+                    <TapGestureRecognizer Command="{Binding GoToMaster}" NumberOfTapsRequired="1">
+                    </TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Office"
                    TextColor="Black"
                    Grid.Column="1"
                    FontSize="24"/>
@@ -16,7 +22,7 @@
                    Grid.Column="2"
                    Margin="10,0"
                    FontSize="24"/>
-            <CollectionView Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding Propertys}">
+            <CollectionView Grid.Row="1" Grid.ColumnSpan="3" SelectedItem="{Binding Selectproperty}" ItemsSource="{Binding Propertys}">
                 <CollectionView.Header>
                     <Grid ColumnDefinitions="*,*,*" ColumnSpacing="10" Padding="10">
                         <Label Text="" FontSize="20"
@@ -54,6 +60,8 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <ActivityIndicator IsVisible="{Binding IsBusy}" 
+                               Grid.ColumnSpan="3"
+                               Grid.RowSpan="2"
                                HorizontalOptions="CenterAndExpand"
                                VerticalOptions="CenterAndExpand"
                                IsRunning="{Binding IsBusy}"/>

@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Navigation;
 using RemsyApp.Helpers;
+using RemsyApp.Models;
 using Remsys.Domain.Dtos;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace RemsyApp.ViewModels
     public class MenuDetailPageViewModel:BaseViewModel,IInitialize
     {
         public ObservableCollection<MenuItem> MenuItems  { get; set; }
+        public PersonDto PersonDto  { get=>Settings.PersonDto;  }
         private MenuItem selectItem;
 
         public MenuItem SelectItem

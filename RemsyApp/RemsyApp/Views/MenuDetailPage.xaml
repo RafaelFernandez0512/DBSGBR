@@ -22,21 +22,13 @@
                                HorizontalOptions="CenterAndExpand">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="Daihiana Vasquez" 
-                                          FontSize="30"/>
+
+                                    <Span Text="{Binding PersonDto.Name}"/>
+                                    <Span Text="{Binding PersonDto.LastName,StringFormat=' {0}'}"/>
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Label Grid.Column="1"
-                               Grid.Row="1"
-                               TextColor="Black">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span Text="{Binding Name}"/>
-                                    <Span Text="{Binding LastName,StringFormat=' {0}'}"/>
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
+
                      
                     </Grid>
                 </CollectionView.Header>
