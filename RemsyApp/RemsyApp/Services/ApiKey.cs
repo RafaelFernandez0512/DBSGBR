@@ -6,6 +6,6 @@ namespace RemsyApp.Services
 {
     public static class ApiKey
     {
-        public static string ApiUrl { get=> "https://localhost:44337";  }
+        public static string ApiUrl { get=> "https://0cc434d58cf1.ngrok.io";  }
     }
 }

@@ -101,7 +101,7 @@ namespace Remsys.Data.Services
                 estateAgents.Add(new EstateAgentDto
                 {
                     IdEstateAgent = item.Field<int>(0),
-                    Image = item.Field<byte[]>(1),
+                    Image = item.Field<string>(1),
                     IdPerson = item.Field<int>(2),
                     IdentityDocument = item.Field<string>(3),
                     IdDocumentType = item.Field<int>(4),

@@ -36,7 +36,7 @@ namespace Remsys.Domain.Dtos
         [JsonProperty("Rate")]
         public int Rate { get; set; }
         [JsonProperty("Image")]
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
         [JsonProperty("QuantityMeters")]
         public decimal QuantityMeters { get; set; }
         [JsonProperty("EstateAgent")]

@@ -14,6 +14,18 @@ namespace RemsyApp.ViewModels
     {
         IPropertyService _propertyService;
         public ObservableCollection<PropertyDto> Propertys { get; set; }
+        private PropertyDto selectproperty;
+
+        public PropertyDto Selectproperty
+        {
+            get { return selectproperty; }
+            set {
+                selectproperty = value;
+                if (selectproperty != null) {
+                    selectproperty = null;
+                } }
+        }
+
         public HousesPageViewModel(INavigationService navigationService, IPropertyService propertyService) : base(navigationService)
         {
             _propertyService = propertyService;
@@ -21,12 +33,14 @@ namespace RemsyApp.ViewModels
         }
         async Task GetHouses()
         {
+            IsBusy = true;
             var propertys = await _propertyService.GetProperty();
             if (propertys.SuccessResult)
             {
                 if (propertys.Result != null)
-                    Propertys = new ObservableCollection<PropertyDto>(propertys.Result.Where(e => e.IdPropertyType == 3));
+                    Propertys = new ObservableCollection<PropertyDto>(propertys.Result.Where(e => e.IdPropertyType == 2));
             }
+            IsBusy = false;
         }
     }
 }

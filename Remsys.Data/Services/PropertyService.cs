@@ -59,18 +59,17 @@ namespace Remsys.Data.Services
                     },
                     IdAttorney = item.Field<int>(6),
                     IdAddress= item.Field<int>(7),
-                    IdRoom = item.Field<int>(8),
-                    PropertyValue = item.Field<decimal>(9),
-                    QuantityMeters = item.Field<decimal>(10),
-                    Description =  item.Field<string>(11),
-                    Estado = item.Field<bool>(12),
-                    Rate = item.Field<int>(13),
-                     Image = item.Field<byte[]>(14),
+                    PropertyValue = item.Field<decimal>(8),
+                    QuantityMeters = item.Field<decimal>(9),
+                    Description =  item.Field<string>(10),
+                    Estado = item.Field<bool>(11),
+                    Rate = item.Field<int>(12),
+                     Image = item.Field<string>(13),
                      
                     EstateAgent = new EstateAgentDto() {
-                        Image = item.Field<byte[]>(15),
-                        Name = item.Field<string>(16),
-                    LastName = item.Field<string>(17)
+                        Image = item.Field<string>(14),
+                        Name = item.Field<string>(15),
+                    LastName = item.Field<string>(16)
               
                     }
 
